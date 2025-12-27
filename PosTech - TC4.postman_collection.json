@@ -1,0 +1,513 @@
+{
+	"info": {
+		"_postman_id": "2b9e5b76-75c4-4746-9119-b27a5524ef96",
+		"name": "PosTech - TC4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44632007"
+	},
+	"item": [
+		{
+			"name": "ms-usuario",
+			"item": [
+				{
+					"name": "ConsultaByUsuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/usuarios/getUser/gustavo",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"usuarios",
+								"getUser",
+								"gustavo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConsultaByUsuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"usuario\": \"jheniffer\",\n  \"nome\": \"Jheniffer\",\n  \"password\": \"jhe123\", \n  \"email\": \"jhe.t@email.com\",\n  \"usuarioAtivo\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/usuarios",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ms-login",
+			"item": [
+				{
+					"name": "Login - Sucesso",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"sidnei.rod\",\n    \"password\": \"sid1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/login",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login - Senha Errada",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"leonardo.rod\",\n    \"password\": \"teste123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/login",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login - Sem credenciais nenhuma",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"gustavo.rodrigues\",\n    \"password\": \"teste123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/login",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"ghhustavo.rod\",\n    \"name\": \"ghhustavo rod\",\n    \"password\": \"gu106249\",\n    \"email\": \"guh@email.com\",\n    \"roleEnum\": \"USER\",\n    \"activeUser\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/register",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register - Dados faltando",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \" \",\n    \"name\": \" \",\n    \"password\": \" \",\n    \"email\": \"sid@email.com\",\n    \"roleEnum\": \"USER\",\n    \"activeUser\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/register",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh - RefreshToken já usado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXN0YXZvLnJvZHJpZ3VlcyIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzYxNzAxNDk4fQ.vyJXeKsOUDNpNSqvKjMLMjKvHfMMglJeOWyXZI7VDSY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsZW9uYXJkby5yb2QiLCJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NzM4MjIzOX0.5FDYURvLVdTvjz5sfTCDTR7N4bjh7hxReDGlJ5RYwX8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/refresh",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh - Sucesso",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXN0YXZvLnJvZHJpZ3VlcyIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzYxNzAxNDk4fQ.vyJXeKsOUDNpNSqvKjMLMjKvHfMMglJeOWyXZI7VDSY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsZW9uYXJkby5yb2QiLCJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NzM4MjIzOX0.5FDYURvLVdTvjz5sfTCDTR7N4bjh7hxReDGlJ5RYwX8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/refresh",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXN0YXZvLnJvZHJpZ3VlcyIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzYxNzAxNDk4fQ.vyJXeKsOUDNpNSqvKjMLMjKvHfMMglJeOWyXZI7VDSY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsZW9uYXJkby5yb2QiLCJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NzM4MjMyNn0.CrQwVF49T5ByOV16JQVgp1yQoY_Ixiebq2aRwyDD4ig\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/refresh",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ms-feedback",
+			"item": [
+				{
+					"name": "Busca Todos Feedbacks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_MS_FEEDBACK}}/feedback?description&urgencyType=LOW&limit&offset",
+							"host": [
+								"{{HOST_MS_FEEDBACK}}"
+							],
+							"path": [
+								"feedback"
+							],
+							"query": [
+								{
+									"key": "description",
+									"value": null
+								},
+								{
+									"key": "urgencyType",
+									"value": "LOW",
+									"description": "Use URGENT, HIGH, MEDIUM or LOW "
+								},
+								{
+									"key": "limit",
+									"value": null
+								},
+								{
+									"key": "offset",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca id Feedback",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_MS_FEEDBACK}}/feedback/{{id}}",
+							"host": [
+								"{{HOST_MS_FEEDBACK}}"
+							],
+							"path": [
+								"feedback",
+								"{{id}}"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST_MS_USUARIO",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "HOST_MS_LOGIN",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "HOST_MS_FEEDBACK",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
