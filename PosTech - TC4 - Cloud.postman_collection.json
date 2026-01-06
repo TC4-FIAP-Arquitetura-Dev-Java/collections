@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "2b9e5b76-75c4-4746-9119-b27a5524ef96",
-		"name": "PosTech - TC4",
+		"_postman_id": "42c3a12c-aef7-491e-9690-9fc8375c4c26",
+		"name": "PosTech - TC4 - Cloud",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "44632007"
 	},
@@ -10,16 +10,71 @@
 			"name": "ms-usuario",
 			"item": [
 				{
+					"name": "Insere usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"projeto.tc4.usuario\",\n  \"name\": \"Projeto TC4\",\n  \"password\": \"teste123\",\n  \"email\": \"projeto.tc4@email.com\",\n  \"roleEnum\": \"USER\",\n  \"activeUser\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/users",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insere usuario - Campos ausentes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"\",\n  \"name\": \"\",\n  \"password\": \"\",\n  \"email\": \"\",\n  \"roleEnum\": \"\",\n  \"activeUser\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/users",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Busca usuario por username",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST_MS_USUARIO}}/users/username/{{username}}",
+							"raw": "{{HOST_MS_USUARIO}}/v1/users/username/{{username}}",
 							"host": [
 								"{{HOST_MS_USUARIO}}"
 							],
 							"path": [
+								"v1",
 								"users",
 								"username",
 								"{{username}}"
@@ -53,11 +108,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST_MS_USUARIO}}/users/{{id}}",
+							"raw": "{{HOST_MS_USUARIO}}/v1/users/{{id}}",
 							"host": [
 								"{{HOST_MS_USUARIO}}"
 							],
 							"path": [
+								"v1",
 								"users",
 								"{{id}}"
 							]
@@ -71,11 +127,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST_MS_USUARIO}}/users/{{id}}",
+							"raw": "{{HOST_MS_USUARIO}}/v1/users/{{id}}",
 							"host": [
 								"{{HOST_MS_USUARIO}}"
 							],
 							"path": [
+								"v1",
 								"users",
 								"{{id}}"
 							]
@@ -90,7 +147,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"username\": \"gustavo.rodrigues23\",\n  \"name\": \"gu rodrigues\",\n  \"password\": \"Password@123\",\n  \"email\": \"gu.rod@email.com\",\n  \"roleEnum\": \"ADMIN\",\n  \"activeUser\": true\n}",
+							"raw": "{\n  \"username\": \"projeto.fiap11\",\n  \"name\": \"projeto teste\",\n  \"password\": \"Password@123\",\n  \"email\": \"teste.te@email.com\",\n  \"roleEnum\": \"ADMIN\",\n  \"activeUser\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -98,11 +155,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST_MS_USUARIO}}/users/{{id}}",
+							"raw": "{{HOST_MS_USUARIO}}/v1/users/{{id}}",
 							"host": [
 								"{{HOST_MS_USUARIO}}"
 							],
 							"path": [
+								"v1",
 								"users",
 								"{{id}}"
 							]
@@ -125,11 +183,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST_MS_USUARIO}}/users/{{id}}",
+							"raw": "{{HOST_MS_USUARIO}}/v1/users/{{id}}",
 							"host": [
 								"{{HOST_MS_USUARIO}}"
 							],
 							"path": [
+								"v1",
 								"users",
 								"{{id}}"
 							]
@@ -161,65 +220,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{HOST_MS_USUARIO}}/users/{{id}}",
+							"raw": "{{HOST_MS_USUARIO}}/v1/users/{{id}}",
 							"host": [
 								"{{HOST_MS_USUARIO}}"
 							],
 							"path": [
+								"v1",
 								"users",
 								"{{id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Insere usuario",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"username\": \"thalita\",\n  \"name\": \"thalita silva\",\n  \"password\": \"Password@123\",\n  \"email\": \"tha.silva@email.com\",\n  \"roleEnum\": \"ADMIN\",\n  \"activeUser\": true\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{HOST_MS_USUARIO}}/users",
-							"host": [
-								"{{HOST_MS_USUARIO}}"
-							],
-							"path": [
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Insere usuario - Campos ausentes",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"username\": \"\",\n  \"name\": \"\",\n  \"password\": \"\",\n  \"email\": \"\",\n  \"roleEnum\": \"\",\n  \"activeUser\": true\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{HOST_MS_USUARIO}}/users",
-							"host": [
-								"{{HOST_MS_USUARIO}}"
-							],
-							"path": [
-								"users"
 							]
 						}
 					},
@@ -230,135 +238,6 @@
 		{
 			"name": "ms-login",
 			"item": [
-				{
-					"name": "Login - Sucesso",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"var jsonData = pm.response.json();",
-									"pm.environment.set(\"jwt_admin\", jsonData.token);"
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"username\": \"gustavo.rodrigues\",\n    \"password\": \"teste123\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{HOST_MS_LOGIN}}/login",
-							"host": [
-								"{{HOST_MS_LOGIN}}"
-							],
-							"path": [
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Login - Senha Errada",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"var jsonData = pm.response.json();",
-									"pm.environment.set(\"jwt_admin\", jsonData.token);"
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"username\": \"leonardo.rod\",\n    \"password\": \"teste123456\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{HOST_MS_LOGIN}}/login",
-							"host": [
-								"{{HOST_MS_LOGIN}}"
-							],
-							"path": [
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Login - Sem credenciais nenhuma",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"var jsonData = pm.response.json();",
-									"pm.environment.set(\"jwt_admin\", jsonData.token);"
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"username\": \"gustavo.rodrigues\",\n    \"password\": \"teste123\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{HOST_MS_LOGIN}}/login",
-							"host": [
-								"{{HOST_MS_LOGIN}}"
-							],
-							"path": [
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
 				{
 					"name": "Register",
 					"event": [
@@ -383,7 +262,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"ghhustavo.rod\",\n    \"name\": \"ghhustavo rod\",\n    \"password\": \"gu106249\",\n    \"email\": \"guh@email.com\",\n    \"roleEnum\": \"USER\",\n    \"activeUser\": true\n}",
+							"raw": "{\n    \"username\": \"gustavo.teste\",\n    \"name\": \"Gustavo Rodrigues\",\n    \"password\": \"teste123\",\n    \"email\": \"guteste@email.com\",\n    \"roleEnum\": \"USER\",\n    \"activeUser\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -391,11 +270,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST_MS_LOGIN}}/register",
+							"raw": "{{HOST_MS_LOGIN}}/v1/register",
 							"host": [
 								"{{HOST_MS_LOGIN}}"
 							],
 							"path": [
+								"v1",
 								"register"
 							]
 						}
@@ -446,7 +326,7 @@
 					"response": []
 				},
 				{
-					"name": "Refresh - RefreshToken já usado",
+					"name": "Login - Sucesso",
 					"event": [
 						{
 							"listen": "test",
@@ -463,20 +343,13 @@
 					],
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXN0YXZvLnJvZHJpZ3VlcyIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzYxNzAxNDk4fQ.vyJXeKsOUDNpNSqvKjMLMjKvHfMMglJeOWyXZI7VDSY",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsZW9uYXJkby5yb2QiLCJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NzM4MjIzOX0.5FDYURvLVdTvjz5sfTCDTR7N4bjh7hxReDGlJ5RYwX8\"\n}",
+							"raw": "{\n    \"username\": \"projeto.tc4\",\n    \"password\": \"teste123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -484,12 +357,57 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST_MS_LOGIN}}/refresh",
+							"raw": "{{HOST_MS_LOGIN}}/v1/login",
 							"host": [
 								"{{HOST_MS_LOGIN}}"
 							],
 							"path": [
-								"refresh"
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login - Senha Errada",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"projeto.tc4\",\n    \"password\": \"teste123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/v1/login",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"v1",
+								"login"
 							]
 						}
 					},
@@ -517,7 +435,102 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXN0YXZvLnJvZHJpZ3VlcyIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzYxNzAxNDk4fQ.vyJXeKsOUDNpNSqvKjMLMjKvHfMMglJeOWyXZI7VDSY",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjYyMzk4fQ.wFQmk2aceNwlF5ljAuFSaZbDJRb9ys0O6YqAGICnYBM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwiZXhwIjoxNzY4MjYzNTk4fQ.spaGNIbFVCOcNnv-UrCRM1EJUU42RNnrs-VyAjhAsHk\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/v1/refresh",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"v1",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login - Sem credenciais nenhuma",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"\",\n    \"password\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/v1/login",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh - RefreshToken já usado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjYyMzk4fQ.wFQmk2aceNwlF5ljAuFSaZbDJRb9ys0O6YqAGICnYBM",
 									"type": "string"
 								}
 							]
@@ -534,11 +547,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST_MS_LOGIN}}/refresh",
+							"raw": "{{HOST_MS_LOGIN}}/v1/refresh",
 							"host": [
 								"{{HOST_MS_LOGIN}}"
 							],
 							"path": [
+								"v1",
 								"refresh"
 							]
 						}
@@ -584,11 +598,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST_MS_LOGIN}}/logout",
+							"raw": "{{HOST_MS_LOGIN}}/v1/logout",
 							"host": [
 								"{{HOST_MS_LOGIN}}"
 							],
 							"path": [
+								"v1",
 								"logout"
 							]
 						}
@@ -617,7 +632,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjYzMTE2fQ.q6mk1A-HKPi85TKNFFswSvQM9qu4s4uRovu_T6fwrhg",
 									"type": "string"
 								}
 							]
@@ -634,11 +649,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST_MS_LOGIN}}/logout",
+							"raw": "{{HOST_MS_LOGIN}}/v1/logout",
 							"host": [
 								"{{HOST_MS_LOGIN}}"
 							],
 							"path": [
+								"v1",
 								"logout"
 							]
 						}
@@ -651,16 +667,76 @@
 			"name": "ms-feedback",
 			"item": [
 				{
-					"name": "Busca Todos Feedbacks",
+					"name": "Inserir Feedback",
 					"request": {
-						"method": "GET",
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"teste@teste.com\",\n  \"description\": \"Excellent service.\",\n  \"rating\": 8,\n  \"urgencyType\": \"MEDIUM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{HOST_MS_FEEDBACK}}/feedback?description&urgencyType=LOW&limit&offset",
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback",
 							"host": [
 								"{{HOST_MS_FEEDBACK}}"
 							],
 							"path": [
+								"v1",
+								"feedback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca Todos Feedbacks - Com filtro de pesquisa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY2MzAyfQ.opYZ0D9dAGnBIXMfCh6ClilphYiSWPQsdlX20YP8PSM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback?description&urgencyType=LOW&limit&offset",
+							"host": [
+								"{{HOST_MS_FEEDBACK}}"
+							],
+							"path": [
+								"v1",
 								"feedback"
 							],
 							"query": [
@@ -670,8 +746,7 @@
 								},
 								{
 									"key": "urgencyType",
-									"value": "LOW",
-									"description": "Use URGENT, HIGH, MEDIUM or LOW "
+									"value": "LOW"
 								},
 								{
 									"key": "limit",
@@ -688,15 +763,38 @@
 				},
 				{
 					"name": "Busca id Feedback",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{HOST_MS_FEEDBACK}}/feedback/{{id}}",
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback/{{id}}",
 							"host": [
 								"{{HOST_MS_FEEDBACK}}"
 							],
 							"path": [
+								"v1",
 								"feedback",
 								"{{id}}"
 							],
@@ -714,11 +812,21 @@
 				{
 					"name": "Atualiza Feedback",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"description\": \"Excellent service.\",\n  \"rating\": 8,\n  \"urgencyType\": \"LOW\"\n}",
+							"raw": "{\n  \"email\": \"teste@teste.com\",\n  \"description\": \"Excellent service.\",\n  \"rating\": 8,\n  \"urgencyType\": \"MEDIUM\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -726,11 +834,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST_MS_FEEDBACK}}/feedback/{{id}}",
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback/{{id}}",
 							"host": [
 								"{{HOST_MS_FEEDBACK}}"
 							],
 							"path": [
+								"v1",
 								"feedback",
 								"{{id}}"
 							]
@@ -741,6 +850,16 @@
 				{
 					"name": "Delete Feedback",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY2MzAyfQ.opYZ0D9dAGnBIXMfCh6ClilphYiSWPQsdlX20YP8PSM",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
@@ -753,49 +872,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST_MS_FEEDBACK}}/feedback/{{id}}",
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback/{{id}}",
 							"host": [
 								"{{HOST_MS_FEEDBACK}}"
 							],
 							"path": [
+								"v1",
 								"feedback",
 								"{{id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Inserir Feedback",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXN0YXZvLnJvZHJpZ3VlcyIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiI2OTUxNzk4MDAxODY1MjExZDUyNGZhZjIiLCJyb2xlIjoiVVNFUiIsImV4cCI6MTc2Njk1MDg1Mn0.fQiGQXTyVoyG0sFsiQ5uN1HYpMDFGuOHZ4imgORP5m0",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"description\": \"Excelente opnião sobre o sistema\",\n  \"rating\": 8,\n  \"urgencyType\": \"LOW\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{HOST_MS_FEEDBACK}}/feedback",
-							"host": [
-								"{{HOST_MS_FEEDBACK}}"
-							],
-							"path": [
-								"feedback"
 							]
 						}
 					},
@@ -804,21 +888,42 @@
 			]
 		}
 	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
 			"key": "HOST_MS_USUARIO",
-			"value": "",
-			"type": "default"
+			"value": ""
 		},
 		{
 			"key": "HOST_MS_LOGIN",
-			"value": "",
-			"type": "default"
+			"value": ""
 		},
 		{
 			"key": "HOST_MS_FEEDBACK",
-			"value": "",
-			"type": "default"
+			"value": ""
 		}
 	]
 }

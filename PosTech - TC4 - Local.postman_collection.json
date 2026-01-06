@@ -1,0 +1,26 @@
+{
+	"info": {
+		"_postman_id": "2b9e5b76-75c4-4746-9119-b27a5524ef96",
+		"name": "PosTech - TC4 - Local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44632007"
+	},
+	"item": [],
+	"variable": [
+		{
+			"key": "HOST_MS_USUARIO",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "HOST_MS_LOGIN",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "HOST_MS_FEEDBACK",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
