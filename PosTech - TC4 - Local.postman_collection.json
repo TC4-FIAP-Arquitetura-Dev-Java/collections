@@ -1129,21 +1129,42 @@
 			]
 		}
 	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
 			"key": "HOST_MS_USUARIO",
-			"value": "",
-			"type": "default"
+			"value": "http://localhost:9083/ms-usuario"
 		},
 		{
 			"key": "HOST_MS_LOGIN",
-			"value": "",
-			"type": "default"
+			"value": "http://localhost:9082/ms-login"
 		},
 		{
 			"key": "HOST_MS_FEEDBACK",
-			"value": "",
-			"type": "default"
+			"value": "http://localhost:9084/ms-feedback"
 		}
 	]
 }

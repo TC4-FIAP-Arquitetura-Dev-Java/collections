@@ -1155,15 +1155,15 @@
 	"variable": [
 		{
 			"key": "HOST_MS_USUARIO",
-			"value": ""
+			"value": "https://ms-usuario-780675609467.us-central1.run.app/ms-usuario"
 		},
 		{
 			"key": "HOST_MS_LOGIN",
-			"value": ""
+			"value": "https://ms-login-780675609467.us-central1.run.app/ms-login"
 		},
 		{
 			"key": "HOST_MS_FEEDBACK",
-			"value": ""
+			"value": "https://ms-feedback-780675609467.us-central1.run.app/ms-feedback"
 		}
 	]
 }
