@@ -5,7 +5,1130 @@
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "44632007"
 	},
-	"item": [],
+	"item": [
+		{
+			"name": "ms-feedback",
+			"item": [
+				{
+					"name": "Inserir Feedback",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"teste@teste.com\",\n  \"description\": \"Excellent service.\",\n  \"rating\": 8,\n  \"urgencyType\": \"MEDIUM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback",
+							"host": [
+								"{{HOST_MS_FEEDBACK}}"
+							],
+							"path": [
+								"v1",
+								"feedback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inserir Feedback - Disparo de Email",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"teste@teste.com\",\n  \"description\": \"Excellent service.\",\n  \"rating\": 8,\n  \"urgencyType\": \"MEDIUM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback",
+							"host": [
+								"{{HOST_MS_FEEDBACK}}"
+							],
+							"path": [
+								"v1",
+								"feedback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inserir Feedback - Sem Preenchimento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"\",\n  \"description\": \"\",\n  \"rating\": null,\n  \"urgencyType\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback",
+							"host": [
+								"{{HOST_MS_FEEDBACK}}"
+							],
+							"path": [
+								"v1",
+								"feedback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca Todos Feedbacks - Com filtro de pesquisa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY2MzAyfQ.opYZ0D9dAGnBIXMfCh6ClilphYiSWPQsdlX20YP8PSM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback?description&urgencyType=LOW&limit&offset",
+							"host": [
+								"{{HOST_MS_FEEDBACK}}"
+							],
+							"path": [
+								"v1",
+								"feedback"
+							],
+							"query": [
+								{
+									"key": "description",
+									"value": null
+								},
+								{
+									"key": "urgencyType",
+									"value": "LOW"
+								},
+								{
+									"key": "limit",
+									"value": null
+								},
+								{
+									"key": "offset",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca Todos Feedbacks - Sem filtro de pesquisa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY2MzAyfQ.opYZ0D9dAGnBIXMfCh6ClilphYiSWPQsdlX20YP8PSM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback?description&limit&offset",
+							"host": [
+								"{{HOST_MS_FEEDBACK}}"
+							],
+							"path": [
+								"v1",
+								"feedback"
+							],
+							"query": [
+								{
+									"key": "description",
+									"value": null
+								},
+								{
+									"key": "limit",
+									"value": null
+								},
+								{
+									"key": "offset",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca id Feedback",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback/{{id}}",
+							"host": [
+								"{{HOST_MS_FEEDBACK}}"
+							],
+							"path": [
+								"v1",
+								"feedback",
+								"{{id}}"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca id Feedback - Id Inexistente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback/{{id}}",
+							"host": [
+								"{{HOST_MS_FEEDBACK}}"
+							],
+							"path": [
+								"v1",
+								"feedback",
+								"{{id}}"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualiza Feedback",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"teste@teste.com\",\n  \"description\": \"Excellent service.\",\n  \"rating\": 8,\n  \"urgencyType\": \"MEDIUM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback/{{id}}",
+							"host": [
+								"{{HOST_MS_FEEDBACK}}"
+							],
+							"path": [
+								"v1",
+								"feedback",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualiza Feedback - Id Inexistente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"teste@teste.com\",\n  \"description\": \"Excellent service.\",\n  \"rating\": 8,\n  \"urgencyType\": \"MEDIUM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback/{{id}}",
+							"host": [
+								"{{HOST_MS_FEEDBACK}}"
+							],
+							"path": [
+								"v1",
+								"feedback",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Feedback",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY2MzAyfQ.opYZ0D9dAGnBIXMfCh6ClilphYiSWPQsdlX20YP8PSM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback/{{id}}",
+							"host": [
+								"{{HOST_MS_FEEDBACK}}"
+							],
+							"path": [
+								"v1",
+								"feedback",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Feedback - id Inexistente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY2MzAyfQ.opYZ0D9dAGnBIXMfCh6ClilphYiSWPQsdlX20YP8PSM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback/{{id}}",
+							"host": [
+								"{{HOST_MS_FEEDBACK}}"
+							],
+							"path": [
+								"v1",
+								"feedback",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ms-login",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"gustavo.teste\",\n    \"name\": \"Gustavo Rodrigues\",\n    \"password\": \"teste123\",\n    \"email\": \"guteste@email.com\",\n    \"roleEnum\": \"USER\",\n    \"activeUser\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/v1/register",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register - Dados faltando",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \" \",\n    \"name\": \" \",\n    \"password\": \" \",\n    \"email\": \"sid@email.com\",\n    \"roleEnum\": \"USER\",\n    \"activeUser\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/v1/register",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login - Sucesso",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"projeto.tc4\",\n    \"password\": \"teste123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/v1/login",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login - Senha Errada",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"projeto.tc4\",\n    \"password\": \"teste123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/v1/login",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login - Sem credenciais nenhuma",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"\",\n    \"password\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/v1/login",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh - Sucesso",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjYyMzk4fQ.wFQmk2aceNwlF5ljAuFSaZbDJRb9ys0O6YqAGICnYBM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwiZXhwIjoxNzY4MjYzNTk4fQ.spaGNIbFVCOcNnv-UrCRM1EJUU42RNnrs-VyAjhAsHk\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/v1/refresh",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"v1",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh - RefreshToken já usado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjYyMzk4fQ.wFQmk2aceNwlF5ljAuFSaZbDJRb9ys0O6YqAGICnYBM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsZW9uYXJkby5yb2QiLCJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NzM4MjIzOX0.5FDYURvLVdTvjz5sfTCDTR7N4bjh7hxReDGlJ5RYwX8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/v1/refresh",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"v1",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXN0YXZvLnJvZHJpZ3VlcyIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxIiwicm9sZSI6IkFETUlOIiwiZXhwIjoxNzYxNzAxNDk4fQ.vyJXeKsOUDNpNSqvKjMLMjKvHfMMglJeOWyXZI7VDSY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaWRuZWkucm9kIiwidG9rZW5fdHlwZSI6InJlZnJlc2giLCJleHAiOjE3Njc0ODIyNDV9.i_PCv70PYRSYBMcZzcnv1tQvEtUXJGJ8O6fC1fQehgg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/v1/logout",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"v1",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout - RefreshToken errado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjYzMTE2fQ.q6mk1A-HKPi85TKNFFswSvQM9qu4s4uRovu_T6fwrhg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaWRuZWkucm9kIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsInVzZXJJZCI6IjY5NGYzMTVlNDU1YTZjN2ZiY2YxN2VlYiIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY2ODgwOTA3fQ.D743clPBR-AIGI-hSLARVv_M56PY9d9jO9OkUbCIj8A\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_LOGIN}}/v1/logout",
+							"host": [
+								"{{HOST_MS_LOGIN}}"
+							],
+							"path": [
+								"v1",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ms-usuario",
+			"item": [
+				{
+					"name": "Insere usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"projeto.tc4.usuario\",\n  \"name\": \"Projeto TC4\",\n  \"password\": \"teste123\",\n  \"email\": \"projeto.tc4@email.com\",\n  \"roleEnum\": \"USER\",\n  \"activeUser\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/users",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insere usuario - Campos ausentes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"\",\n  \"name\": \"\",\n  \"password\": \"\",\n  \"email\": \"\",\n  \"roleEnum\": \"\",\n  \"activeUser\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/users",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca usuario por username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/users/username/{{username}}",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"username",
+								"{{username}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca usuario por username - Username inexistente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/users/username/{{username}}",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"users",
+								"username",
+								"{{username}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca usuario por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/users/{{id}}",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca usuario por id - Id inexistente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/users/{{id}}",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"projeto.fiap11\",\n  \"name\": \"projeto teste\",\n  \"password\": \"Password@123\",\n  \"email\": \"teste.te@email.com\",\n  \"roleEnum\": \"ADMIN\",\n  \"activeUser\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/users/{{id}}",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar usuario - Campos ausentes",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"\",\n  \"name\": \"\",\n  \"password\": \"\",\n  \"email\": \"\",\n  \"roleEnum\": \"ADMIN\",\n  \"activeUser\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/users/{{id}}",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/users/{{id}}",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"users",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta usuario - Id inexistente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_MS_USUARIO}}/v1/users/{{id}}",
+							"host": [
+								"{{HOST_MS_USUARIO}}"
+							],
+							"path": [
+								"v1",
+								"users",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
 	"variable": [
 		{
 			"key": "HOST_MS_USUARIO",
