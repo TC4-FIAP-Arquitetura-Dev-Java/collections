@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "42c3a12c-aef7-491e-9690-9fc8375c4c26",
+		"_postman_id": "fa8391f4-1d1d-425d-8358-5f1dafce9558",
 		"name": "PosTech - TC4 - Cloud",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "44632007"
+		"_exporter_id": "14131416",
+		"_collection_link": "https://interstellar-satellite-368322.postman.co/workspace/FIAP~1209769b-6eb2-4429-9e2f-a01394233f0e/collection/14131416-fa8391f4-1d1d-425d-8358-5f1dafce9558?action=share&source=collection_link&creator=14131416"
 	},
 	"item": [
 		{
@@ -105,6 +106,16 @@
 				{
 					"name": "Busca usuario por id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_admin}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -124,6 +135,16 @@
 				{
 					"name": "Busca usuario por id - Id inexistente",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_admin}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -143,6 +164,16 @@
 				{
 					"name": "Atualizar usuario",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_admin}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -171,6 +202,16 @@
 				{
 					"name": "Atualizar usuario - Campos ausentes",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_admin}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -199,6 +240,16 @@
 				{
 					"name": "Deleta usuario",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_admin}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
@@ -217,6 +268,16 @@
 				{
 					"name": "Deleta usuario - Id inexistente",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_admin}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
@@ -246,7 +307,7 @@
 							"script": {
 								"exec": [
 									"var jsonData = pm.response.json();",
-									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+									"pm.collectionVariables.set(\"jwt_admin\", jsonData.accessToken);"
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -290,7 +351,7 @@
 							"script": {
 								"exec": [
 									"var jsonData = pm.response.json();",
-									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+									"pm.collectionVariables.set(\"jwt_admin\", jsonData.accessToken);"
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -333,7 +394,7 @@
 							"script": {
 								"exec": [
 									"var jsonData = pm.response.json();",
-									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+									"pm.collectionVariables.set(\"jwt_admin\", jsonData.accessToken);"
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -377,7 +438,7 @@
 							"script": {
 								"exec": [
 									"var jsonData = pm.response.json();",
-									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+									"pm.collectionVariables.set(\"jwt_admin\", jsonData.accessToken);"
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -421,7 +482,7 @@
 							"script": {
 								"exec": [
 									"var jsonData = pm.response.json();",
-									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+									"pm.collectionVariables.set(\"jwt_admin\", jsonData.accessToken);"
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -465,7 +526,7 @@
 							"script": {
 								"exec": [
 									"var jsonData = pm.response.json();",
-									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+									"pm.collectionVariables.set(\"jwt_admin\", jsonData.accessToken);"
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -516,7 +577,7 @@
 							"script": {
 								"exec": [
 									"var jsonData = pm.response.json();",
-									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+									"pm.collectionVariables.set(\"jwt_admin\", jsonData.accessToken);"
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -567,7 +628,7 @@
 							"script": {
 								"exec": [
 									"var jsonData = pm.response.json();",
-									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+									"pm.collectionVariables.set(\"jwt_admin\", jsonData.accessToken);"
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -618,7 +679,7 @@
 							"script": {
 								"exec": [
 									"var jsonData = pm.response.json();",
-									"pm.environment.set(\"jwt_admin\", jsonData.token);"
+									"pm.collectionVariables.set(\"jwt_admin\", jsonData.accessToken);"
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -674,7 +735,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"value": "{{jwt_admin}}",
 									"type": "string"
 								}
 							]
@@ -711,7 +772,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"value": "{{jwt_admin}}",
 									"type": "string"
 								}
 							]
@@ -748,7 +809,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"value": "{{jwt_admin}}",
 									"type": "string"
 								}
 							]
@@ -788,7 +849,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY2MzAyfQ.opYZ0D9dAGnBIXMfCh6ClilphYiSWPQsdlX20YP8PSM",
+									"value": "{{jwt_admin}}",
 									"type": "string"
 								}
 							]
@@ -846,7 +907,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY2MzAyfQ.opYZ0D9dAGnBIXMfCh6ClilphYiSWPQsdlX20YP8PSM",
+									"value": "{{jwt_admin}}",
 									"type": "string"
 								}
 							]
@@ -900,7 +961,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"value": "{{jwt_admin}}",
 									"type": "string"
 								}
 							]
@@ -945,7 +1006,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"value": "{{jwt_admin}}",
 									"type": "string"
 								}
 							]
@@ -981,7 +1042,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"value": "{{jwt_admin}}",
 									"type": "string"
 								}
 							]
@@ -1019,7 +1080,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY1MDg1fQ.2X1D5q21HcdaWG32CI-dqXPw7gvgET2xK8JHeat2FLg",
+									"value": "{{jwt_admin}}",
 									"type": "string"
 								}
 							]
@@ -1057,7 +1118,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY2MzAyfQ.opYZ0D9dAGnBIXMfCh6ClilphYiSWPQsdlX20YP8PSM",
+									"value": "{{jwt_admin}}",
 									"type": "string"
 								}
 							]
@@ -1095,7 +1156,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcm9qZXRvLnRjNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VySWQiOiIxMCIsInJvbGUiOiJVU0VSIiwiZXhwIjoxNzY3NjY2MzAyfQ.opYZ0D9dAGnBIXMfCh6ClilphYiSWPQsdlX20YP8PSM",
+									"value": "{{jwt_admin}}",
 									"type": "string"
 								}
 							]
@@ -1120,6 +1181,99 @@
 								"v1",
 								"feedback",
 								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reporte semanal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2026-01-07T01:36:07.284265Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_MS_FEEDBACK}}/v1/feedback/report",
+							"host": [
+								"{{HOST_MS_FEEDBACK}}"
+							],
+							"path": [
+								"v1",
+								"feedback",
+								"report"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "notification",
+			"item": [
+				{
+					"name": "Envio de e-mail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"to\": \"recipient@example.com\",\n    \"subject\": \"Test Notification\",\n    \"body\": \"This is a test email notification\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://notification-780675609467.europe-west1.run.app",
+							"protocol": "https",
+							"host": [
+								"notification-780675609467",
+								"europe-west1",
+								"run",
+								"app"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "report",
+			"item": [
+				{
+					"name": "Geração do report semanal",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://report-780675609467.us-central1.run.app",
+							"protocol": "https",
+							"host": [
+								"report-780675609467",
+								"us-central1",
+								"run",
+								"app"
 							]
 						}
 					},
@@ -1164,6 +1318,10 @@
 		{
 			"key": "HOST_MS_FEEDBACK",
 			"value": "https://ms-feedback-780675609467.us-central1.run.app/ms-feedback"
+		},
+		{
+			"key": "jwt_admin",
+			"value": ""
 		}
 	]
 }
